@@ -15,22 +15,29 @@ namespace Calculate
             return sum;     
         }
 
-        public static double Sub(double NumOne, double NumTwo) => NumOne - NumTwo;
-
-        public static double Mul(double NumOne, double NumTwo) => NumOne * NumTwo;
-
-        public static double Div(double NumOne, double NumTwo) => NumOne / NumTwo;
-
-        public static double Cos(double NumOne = 0, double NumTwo = 0)
+        public static double Sub(double[] numbers)
         {
-            if(NumOne != 0) return Math.Cos(NumOne);
-            return Math.Cos(NumTwo);
+            double sub = numbers[0];
+            for(int i = 1; i < numbers.Length;i++) sub -= numbers[i];
+            return sub;
         }
 
-        public static double Sin(double NumOne = 0, double NumTwo = 0)
+        public static double Mul(double[] numbers)
         {
-            if (NumOne != 0) return Math.Sin(NumOne);
-            return Math.Sin(NumTwo);
+            double mul = 1;
+            foreach(var i in numbers) mul *= i;
+            return mul;
         }
+
+        public static double Div(double[] numbers)
+        {
+            double div = numbers[0];
+            for (int i = 1; i < numbers.Length; i++) div /= numbers[i];
+            return div;
+        }
+
+        public static double Cos(double number) => Math.Cos(number);
+
+        public static double Sin(double number) => Math.Sin(number);
     }
 }

@@ -53,5 +53,35 @@ namespace Calculate
 
             form.Controls.Add(textBox);
         }
+
+        public double[] ParseText(TextBox[] texts)
+        {
+            double[] reslt = new double[texts.Length];
+
+            for (int i = 0; i < reslt.Length; i++) reslt[i] = Double.Parse(texts[i].Text);
+
+            return reslt;
+        }
+
+        public double CheckFieldI(TextBox[] texts)
+        {
+
+            bool f = true;
+            double res = 0;
+            for(int i = 0;i < texts.Length;i++)
+            {
+                if (!Double.TryParse(texts[i].Text, out double buf)) texts[i].Text = "0";
+                else
+                {
+                    if (f && buf != 0)
+                    {
+                        res = buf;
+                        f = false;
+                    }
+                    
+                }
+            }
+            return res;
+        }
     }
 }
