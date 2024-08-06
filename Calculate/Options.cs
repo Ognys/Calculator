@@ -83,5 +83,18 @@ namespace Calculate
             }
             return res;
         }
+
+        public void DeleteField()
+        {
+            form.Controls.Remove(textBoxes[textBoxes.Length - 1]);
+
+            TextBox[] copyTextBoxes = new TextBox[textBoxes.Length - 1];
+
+            for(int i = 0;i < copyTextBoxes.Length;i++) copyTextBoxes[i] = textBoxes[i];
+
+            textBoxes = copyTextBoxes;
+
+            
+        }
     }
 }

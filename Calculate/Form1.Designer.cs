@@ -39,6 +39,7 @@
             AddField = new Button();
             Result = new TextBox();
             NumTwo = new TextBox();
+            DeleField = new Button();
             SuspendLayout();
             // 
             // NumOne
@@ -132,12 +133,23 @@
             NumTwo.Size = new Size(100, 21);
             NumTwo.TabIndex = 1;
             // 
+            // DeleField
+            // 
+            DeleField.Location = new Point(347, 45);
+            DeleField.Name = "DeleField";
+            DeleField.Size = new Size(25, 23);
+            DeleField.TabIndex = 10;
+            DeleField.Text = "-";
+            DeleField.UseVisualStyleBackColor = true;
+            DeleField.Click += DeleField_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(384, 450);
+            Controls.Add(DeleField);
             Controls.Add(AddField);
             Controls.Add(Sin);
             Controls.Add(Cos);
@@ -152,6 +164,7 @@
             ForeColor = SystemColors.MenuText;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Сalculator";
             ResumeLayout(false);
             PerformLayout();
@@ -169,5 +182,6 @@
         private Button AddField;
         private TextBox Result;
         private TextBox NumTwo;
+        private Button DeleField;
     }
 }

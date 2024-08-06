@@ -13,6 +13,7 @@ namespace Calculate
 
             form = this;
             options = new Options(form, NumOne, NumTwo);
+            DeleField.Enabled = false;
 
         }
 
@@ -31,8 +32,16 @@ namespace Calculate
 
         private void AddField_Click(object sender, EventArgs e)
         {
-            if(options.textBoxes.Length == 5) AddField.Enabled = false;
+            if (options.textBoxes.Length == 5) AddField.Enabled = false;
             options.AddFiled();
+            DeleField.Enabled = true;
+        }
+
+        private void DeleField_Click(object sender, EventArgs e)
+        {
+            options.DeleteField();
+            if(options.textBoxes.Length == 2) DeleField.Enabled = false;
+            AddField.Enabled = true;
         }
     }
 }
