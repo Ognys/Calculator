@@ -4,44 +4,92 @@ namespace Calculate
 {
     public partial class Form1 : Form
     {
-        Form form;
-        Options options;
+
 
         public Form1()
         {
             InitializeComponent();
 
-            form = this;
-            options = new Options(form, NumOne, NumTwo);
-            DeleField.Enabled = false;
+
 
         }
 
 
-        private void Sum_Click(object sender, EventArgs e) => Result.Text = CalCul.Sum(options.ParseText(options.textBoxes)).ToString();
 
-        private void Sub_Click(object sender, EventArgs e) => Result.Text = CalCul.Sub(options.ParseText(options.textBoxes)).ToString();
 
-        private void Mul_Click(object sender, EventArgs e) => Result.Text = CalCul.Mul(options.ParseText(options.textBoxes)).ToString();
-
-        private void Div_Click(object sender, EventArgs e) => Result.Text = CalCul.Div(options.ParseText(options.textBoxes)).ToString();
-
-        private void Cos_Click(object sender, EventArgs e) => Result.Text = CalCul.Cos(options.CheckFieldI(options.textBoxes)).ToString();
-
-        private void Sin_Click(object sender, EventArgs e) => Result.Text = CalCul.Sin(options.CheckFieldI(options.textBoxes)).ToString();
-
-        private void AddField_Click(object sender, EventArgs e)
+        private void NumThree_Click(object sender, EventArgs e)
         {
-            if (options.textBoxes.Length == 5) AddField.Enabled = false;
-            options.AddFiled();
-            DeleField.Enabled = true;
+            Options.ClearFirstNull(InputPanel);
+            InputPanel.Text += "3";
         }
 
-        private void DeleField_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            options.DeleteField();
-            if(options.textBoxes.Length == 2) DeleField.Enabled = false;
-            AddField.Enabled = true;
+
         }
+
+        private void NumOne_Click(object sender, EventArgs e)
+        {
+            Options.ClearFirstNull(InputPanel);
+            InputPanel.Text += "1";
+        }
+
+        private void NumTwo_Click(object sender, EventArgs e)
+        {
+            Options.ClearFirstNull(InputPanel);
+            InputPanel.Text += "2";
+        }
+
+        private void NumFour_Click(object sender, EventArgs e)
+        {
+            Options.ClearFirstNull(InputPanel);
+            InputPanel.Text += "4";
+        }
+
+        private void NumFive_Click(object sender, EventArgs e)
+        {
+            Options.ClearFirstNull(InputPanel);
+            InputPanel.Text += "5";
+        }
+
+        private void NumSix_Click(object sender, EventArgs e)
+        {
+            Options.ClearFirstNull(InputPanel);
+            InputPanel.Text += "6";
+        }
+
+        private void NumSeven_Click(object sender, EventArgs e)
+        {
+            Options.ClearFirstNull(InputPanel);
+            InputPanel.Text += "7";
+        }
+
+        private void NumEight_Click(object sender, EventArgs e)
+        {
+            Options.ClearFirstNull(InputPanel);
+            InputPanel.Text += "8";
+        }
+
+        private void NumNine_Click(object sender, EventArgs e)
+        {
+            Options.ClearFirstNull(InputPanel);
+            InputPanel.Text += "9";
+        }
+
+        private void ClearLabel_Click(object sender, EventArgs e)
+        {
+            InputPanel.Text = "0";
+        }
+
+        private void NumZero_Click(object sender, EventArgs e)
+        {
+            Options.ClearFirstNull(InputPanel);
+            InputPanel.Text += "0";
+        }
+
+        private void SetPlusMinus_Click(object sender, EventArgs e) => InputPanel.Text = ((-Double.Parse(InputPanel.Text)).ToString());
+        
+            
+        
     }
 }
