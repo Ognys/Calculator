@@ -88,6 +88,7 @@
             Percent.TabIndex = 2;
             Percent.Text = "%";
             Percent.UseVisualStyleBackColor = false;
+            Percent.Click += Percent_Click;
             // 
             // OperDiv
             // 
@@ -282,6 +283,7 @@
             OperSum.TabIndex = 17;
             OperSum.Text = "+";
             OperSum.UseVisualStyleBackColor = false;
+            OperSum.Click += OperSum_Click;
             // 
             // OperEqu
             // 
@@ -295,6 +297,7 @@
             OperEqu.TabIndex = 18;
             OperEqu.Text = "=";
             OperEqu.UseVisualStyleBackColor = false;
+            OperEqu.Click += OperEqu_Click;
             // 
             // InputPanel
             // 

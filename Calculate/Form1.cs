@@ -19,6 +19,7 @@ namespace Calculate
 
         private void NumThree_Click(object sender, EventArgs e)
         {
+            Options.CheckInput(InputPanel);
             Options.ClearFirstNull(InputPanel);
             InputPanel.Text += "3";
         }
@@ -30,48 +31,56 @@ namespace Calculate
 
         private void NumOne_Click(object sender, EventArgs e)
         {
+            Options.CheckInput(InputPanel);
             Options.ClearFirstNull(InputPanel);
             InputPanel.Text += "1";
         }
 
         private void NumTwo_Click(object sender, EventArgs e)
         {
+            Options.CheckInput(InputPanel);
             Options.ClearFirstNull(InputPanel);
             InputPanel.Text += "2";
         }
 
         private void NumFour_Click(object sender, EventArgs e)
         {
+            Options.CheckInput(InputPanel);
             Options.ClearFirstNull(InputPanel);
             InputPanel.Text += "4";
         }
 
         private void NumFive_Click(object sender, EventArgs e)
         {
+            Options.CheckInput(InputPanel);
             Options.ClearFirstNull(InputPanel);
             InputPanel.Text += "5";
         }
 
         private void NumSix_Click(object sender, EventArgs e)
         {
+            Options.CheckInput(InputPanel);
             Options.ClearFirstNull(InputPanel);
             InputPanel.Text += "6";
         }
 
         private void NumSeven_Click(object sender, EventArgs e)
         {
+            Options.CheckInput(InputPanel);
             Options.ClearFirstNull(InputPanel);
             InputPanel.Text += "7";
         }
 
         private void NumEight_Click(object sender, EventArgs e)
         {
+            Options.CheckInput(InputPanel);
             Options.ClearFirstNull(InputPanel);
             InputPanel.Text += "8";
         }
 
         private void NumNine_Click(object sender, EventArgs e)
         {
+            Options.CheckInput(InputPanel);
             Options.ClearFirstNull(InputPanel);
             InputPanel.Text += "9";
         }
@@ -83,13 +92,24 @@ namespace Calculate
 
         private void NumZero_Click(object sender, EventArgs e)
         {
+            Options.CheckInput(InputPanel);
             Options.ClearFirstNull(InputPanel);
             InputPanel.Text += "0";
         }
 
         private void SetPlusMinus_Click(object sender, EventArgs e) => InputPanel.Text = ((-Double.Parse(InputPanel.Text)).ToString());
-        
-            
-        
+
+        private void Percent_Click(object sender, EventArgs e) => InputPanel.Text = (Double.Parse(InputPanel.Text) / 100).ToString();
+
+        private void OperSum_Click(object sender, EventArgs e)
+        {
+            CalCul.Sum(InputPanel);
+
+        }
+
+        private void OperEqu_Click(object sender, EventArgs e)
+        {
+            Options.CheckOperat(InputPanel, '+');
+        }
     }
 }
